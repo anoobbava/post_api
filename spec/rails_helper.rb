@@ -12,16 +12,19 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
-
 RSpec.configuration do |config|
+  config.include RequestSpecHelper, type: :request
   config.include FactoryBot::Syntax::Methods
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
-    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.strategy = :truncation, {:only => %w[posts]}
   end
   config.around(:each) do |example|
     DatabaseCleaner.cleaning do
       example.run
     end
+  end
+  config.after :all do
+   ActiveRecord::Base.subclasses.each(&:delete_all)
   end
 end
