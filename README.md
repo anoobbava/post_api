@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Work Details
 
-Things you may want to cover:
+1. Implement API only Project
 
-* Ruby version
+2. implement API for the Post
 
-* System dependencies
+3. Implement Model
 
-* Configuration
+4. Added specs
 
-* Database creation
+5. Added database_cleaner for Clean the test dbs
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+6.
